@@ -7,6 +7,6 @@ from pathlib import Path
 
 def get_data_dir() -> Path:
     """Return the data directory used for logs/state."""
-    path = Path.home() / ".zerobot"
+    path = Path.home() / ".evolvebot"
     path.mkdir(parents=True, exist_ok=True)
     return path

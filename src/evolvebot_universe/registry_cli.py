@@ -9,10 +9,10 @@ import sys
 import typer
 from rich.console import Console
 
-from zerobot_universe.registry_server import RegistryServer, RegistryServerConfig
-from zerobot_universe.utils import get_data_dir
+from evolvebot_universe.registry_server import RegistryServer, RegistryServerConfig
+from evolvebot_universe.utils import get_data_dir
 
-app = typer.Typer(name="zerobot-universe-registry", help="Public Universe registry (central directory)")
+app = typer.Typer(name="evolvebot-universe-registry", help="Public Universe registry (central directory)")
 console = Console()
 
 
@@ -37,7 +37,7 @@ def run(
         cmd = [
             sys.executable,
             "-m",
-            "zerobot_universe.registry_cli",
+            "evolvebot_universe.registry_cli",
             "--foreground",
             "--host",
             host,

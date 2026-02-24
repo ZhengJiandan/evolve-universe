@@ -9,10 +9,10 @@ import sys
 import typer
 from rich.console import Console
 
-from zerobot_universe.relay_server import RelayServer, RelayServerConfig
-from zerobot_universe.utils import get_data_dir
+from evolvebot_universe.relay_server import RelayServer, RelayServerConfig
+from evolvebot_universe.utils import get_data_dir
 
-app = typer.Typer(name="zerobot-universe-relay", help="Public Universe relay (task forwarding)")
+app = typer.Typer(name="evolvebot-universe-relay", help="Public Universe relay (task forwarding)")
 console = Console()
 
 
@@ -29,7 +29,7 @@ def run(
         cmd = [
             sys.executable,
             "-m",
-            "zerobot_universe.relay_cli",
+            "evolvebot_universe.relay_cli",
             "--foreground",
             "--host",
             host,

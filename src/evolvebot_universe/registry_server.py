@@ -20,9 +20,9 @@ from loguru import logger
 import websockets
 from websockets.server import WebSocketServerProtocol
 
-from zerobot_universe.protocol import Envelope, make_envelope
-from zerobot_universe.registry_state import RegistryEntry, RegistryState, KnowledgePack
-from zerobot_universe.ratelimit import RateLimiter
+from evolvebot_universe.protocol import Envelope, make_envelope
+from evolvebot_universe.registry_state import RegistryEntry, RegistryState, KnowledgePack
+from evolvebot_universe.ratelimit import RateLimiter
 
 
 @dataclass

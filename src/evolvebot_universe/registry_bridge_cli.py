@@ -9,9 +9,9 @@ from rich.console import Console
 
 import websockets
 
-from zerobot_universe.protocol import Envelope, make_envelope
+from evolvebot_universe.protocol import Envelope, make_envelope
 
-app = typer.Typer(name="zerobot-universe-registry-bridge", help="Sync multiple registries")
+app = typer.Typer(name="evolvebot-universe-registry-bridge", help="Sync multiple registries")
 console = Console()
 
 

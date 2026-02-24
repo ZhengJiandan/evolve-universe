@@ -23,10 +23,10 @@ if [[ -n "$RELAY_TOKEN" ]]; then
   RELAY_ARGS+=("--token" "$RELAY_TOKEN")
 fi
 
-nohup zerobot-universe-registry "${REGISTRY_ARGS[@]}" >"$REGISTRY_LOG" 2>&1 &
+nohup evolvebot-universe-registry run "${REGISTRY_ARGS[@]}" >"$REGISTRY_LOG" 2>&1 &
 REG_PID=$!
 
-nohup zerobot-universe-relay "${RELAY_ARGS[@]}" >"$RELAY_LOG" 2>&1 &
+nohup evolvebot-universe-relay run "${RELAY_ARGS[@]}" >"$RELAY_LOG" 2>&1 &
 RELAY_PID=$!
 
 echo "Registry started (pid=${REG_PID})"
