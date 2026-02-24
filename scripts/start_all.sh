@@ -27,10 +27,10 @@ if [[ -n "$RELAY_TOKEN" ]]; then
   RELAY_ARGS+=("--token" "$RELAY_TOKEN")
 fi
 
-nohup "$PYTHON_BIN" -m evolvebot_universe.registry_cli run "${REGISTRY_ARGS[@]}" >"$REGISTRY_LOG" 2>&1 &
+nohup "$PYTHON_BIN" -m evolvebot_universe.registry_cli "${REGISTRY_ARGS[@]}" >"$REGISTRY_LOG" 2>&1 &
 REG_PID=$!
 
-nohup "$PYTHON_BIN" -m evolvebot_universe.relay_cli run "${RELAY_ARGS[@]}" >"$RELAY_LOG" 2>&1 &
+nohup "$PYTHON_BIN" -m evolvebot_universe.relay_cli "${RELAY_ARGS[@]}" >"$RELAY_LOG" 2>&1 &
 RELAY_PID=$!
 
 echo "Registry started (pid=${REG_PID})"
