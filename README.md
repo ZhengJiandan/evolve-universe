@@ -1,14 +1,14 @@
-# zerobot-universe
+# evolvebot-universe
 
-Public Universe services for zerobot. This repo hosts both the **registry** (node directory)
+Public Universe services for evolvebot. This repo hosts both the **registry** (node directory)
 and the **relay** (privacy-preserving task forwarding).
 
-## Relationship to zerobot
+## Relationship to evolvebot
 
 This repository provides the standalone **registry** and **relay** services used by the
-AI Universe feature in the main zerobot project.
+AI Universe feature in the main evolvebot project.
 
-zerobot GitHub: `https://github.com/ZhengJiandan/zerobot`
+evolvebot GitHub: `https://github.com/ZhengJiandan/evolvebot`
 
 ## Install
 
@@ -21,17 +21,17 @@ pip install -e .
 Registry (foreground):
 
 ```bash
-zerobot-universe-registry --host 0.0.0.0 --port 18999 --foreground
+evolvebot-universe-registry run --host 0.0.0.0 --port 18999 --foreground
 ```
 
 Relay (foreground):
 
 ```bash
-zerobot-universe-relay --host 0.0.0.0 --port 19001 --foreground
+evolvebot-universe-relay run --host 0.0.0.0 --port 19001 --foreground
 ```
 
 Background mode is the default if you omit `--foreground`.
-Logs are written to `~/.zerobot/registry.log` and `~/.zerobot/relay.log`.
+Logs are written to `~/.evolvebot/registry.log` and `~/.evolvebot/relay.log`.
 
 ## One-click start (registry + relay)
 
@@ -48,7 +48,7 @@ REGISTRY_HOST=0.0.0.0 REGISTRY_PORT=18999 RELAY_HOST=0.0.0.0 RELAY_PORT=19001 ./
 ## Registry bridge
 
 ```bash
-zerobot-universe-registry-bridge \
+evolvebot-universe-registry-bridge \
   --registry ws://reg1:18999 \
   --registry ws://reg2:18999 \
   --interval 15
