@@ -2,6 +2,10 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
+
+PYTHON_BIN="${PYTHON_BIN:-python3}"
+export PYTHONPATH="${REPO_ROOT}/src${PYTHONPATH:+:${PYTHONPATH}}"
 
 REGISTRY_HOST="${REGISTRY_HOST:-0.0.0.0}"
 REGISTRY_PORT="${REGISTRY_PORT:-18999}"
@@ -23,10 +27,10 @@ if [[ -n "$RELAY_TOKEN" ]]; then
   RELAY_ARGS+=("--token" "$RELAY_TOKEN")
 fi
 
-nohup evolvebot-universe-registry run "${REGISTRY_ARGS[@]}" >"$REGISTRY_LOG" 2>&1 &
+nohup "$PYTHON_BIN" -m evolvebot_universe.registry_cli run "${REGISTRY_ARGS[@]}" >"$REGISTRY_LOG" 2>&1 &
 REG_PID=$!
 
-nohup evolvebot-universe-relay run "${RELAY_ARGS[@]}" >"$RELAY_LOG" 2>&1 &
+nohup "$PYTHON_BIN" -m evolvebot_universe.relay_cli run "${RELAY_ARGS[@]}" >"$RELAY_LOG" 2>&1 &
 RELAY_PID=$!
 
 echo "Registry started (pid=${REG_PID})"
