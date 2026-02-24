@@ -19,10 +19,10 @@ if [[ -n "$RELAY_TOKEN" ]]; then
   RELAY_ARGS+=("--token" "$RELAY_TOKEN")
 fi
 
-zerobot-universe-registry run "${REGISTRY_ARGS[@]}" &
+zerobot-universe-registry "${REGISTRY_ARGS[@]}" &
 REG_PID=$!
 
-zerobot-universe-relay run "${RELAY_ARGS[@]}" &
+zerobot-universe-relay "${RELAY_ARGS[@]}" &
 RELAY_PID=$!
 
 cleanup() {

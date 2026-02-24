@@ -21,13 +21,13 @@ pip install -e .
 Registry (foreground):
 
 ```bash
-zerobot-universe-registry run --host 0.0.0.0 --port 18999 --foreground
+zerobot-universe-registry --host 0.0.0.0 --port 18999 --foreground
 ```
 
 Relay (foreground):
 
 ```bash
-zerobot-universe-relay run --host 0.0.0.0 --port 19001 --foreground
+zerobot-universe-relay --host 0.0.0.0 --port 19001 --foreground
 ```
 
 Background mode is the default if you omit `--foreground`.
