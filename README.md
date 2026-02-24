@@ -3,6 +3,13 @@
 Public Universe services for zerobot. This repo hosts both the **registry** (node directory)
 and the **relay** (privacy-preserving task forwarding).
 
+## Relationship to zerobot
+
+This repository provides the standalone **registry** and **relay** services used by the
+AI Universe feature in the main zerobot project.
+
+zerobot GitHub: `https://github.com/ZhengJiandan/zerobot`
+
 ## Install
 
 ```bash
